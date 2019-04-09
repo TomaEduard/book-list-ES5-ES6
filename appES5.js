@@ -64,13 +64,14 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
     isbn = document.getElementById('isbn').value
   const book = new Book(title, author, isbn);
 
-  // Instantiate UI
-  const ui = new UI();
   //  Validate
   if (title === '' || author === '' || isbn === '') {
     // Error alert
     ui.showAlert('Please fill in all field', 'error')
   } else {
+    // Instantiate UI
+    const ui = new UI();
+
     // Add book to list
     ui.addBookToList(book);
 
